@@ -20,8 +20,6 @@ class Solution:
             result = 1
 
         return result
-        
-
-
+     
 solution = Solution()
-print(solution.climb_stairs(44))
+print(solution.climbStairs(44))
