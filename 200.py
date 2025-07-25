@@ -1,4 +1,5 @@
 from typing import List
+from collections import deque
 
 
 class Solution:
@@ -22,12 +23,13 @@ class Solution:
                 # Otherwise we have found an unseen 1
                 else:
                 # Initialise a queue with the starting node
-                    queue = [(m,n)]
+                    queue = deque()
+                    queue.append((m,n))
                 
                 # While queue is not empty
                     while queue:
                         # Get newest node and remove from queue and add to seen
-                        node = queue.pop(0)
+                        node = queue.popleft()
                         viewed.add(node)
 
                         # Get neighbours to right and down (above and left must've been seen)
