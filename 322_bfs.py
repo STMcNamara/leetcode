@@ -8,7 +8,7 @@ class Solution:
         if amount == 0:
             return 0
         
-        seen = {}
+        seen_amounts = set()
         queue = deque()
         # (amount, hops)
         queue.append((0,0))
@@ -20,7 +20,10 @@ class Solution:
                 if new_node[0] == amount:
                     return new_node[1]
                 elif new_node[0] < amount:
-                    queue.append(new_node)
+                    if new_node[0] not in seen_amounts:
+                        queue.append(new_node)
+                        seen_amounts.add(new_node[0])
+                    
 
         # Queue is empty - no solutions
         return -1
@@ -32,6 +35,6 @@ class Solution:
         
 if __name__ == "__main__":
     coins = [1,2,5]
-    amount = 11
+    amount = 100
     s = Solution()
     print(s.coinChange(coins, amount))
