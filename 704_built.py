@@ -13,7 +13,7 @@ class Solution:
 if __name__ =="__main__":
     s = Solution()
     test_list = [-1,0,3,5,9,12]
-    target = 12
+    target = 4
 
 
     print(s.search(test_list, target))
