@@ -22,31 +22,7 @@ class Solution:
             coldest_days.append(day)
 
         return deltas
-                       
-           
-           
-           
-           
-           
-           
-           
-        #    if not coldest_days and temperatures[day] > temperatures[day-1]:
-        #         deltas[day] = 1
-        #     elif temperatures[day] <= temperatures[coldest_days[-1]]:
-        #         coldest_days.append(day)
-        #     # Case where the day must be hotter than the coldest day
-        #     else:
-        #         # Today is hotter than yesterday
-        #         deltas[day] = 1
-                
-        #         # Check how many preceeding days where colder
-        #         c_index = day - 1
-        #         while temperatures[day] > temperatures[c_index]:
-        #             delta = day - c_index
-        #             deltas[c_index] = day - c_index
-        #             c_index -= 1
 
-        #return deltas
     
 if __name__ == "__main__":
     s = Solution()
