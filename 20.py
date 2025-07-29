@@ -8,12 +8,10 @@ class Solution:
             if char in bracket_map.values():
                 stack.append(char)
             # Closed bracket case - no stack
-            elif not stack:
+            elif not stack or stack[-1] != bracket_map[char]:
                 return False
             else:
-                open_bracket = stack.pop()
-                if open_bracket != bracket_map[char]:
-                    return False
+                stack.pop()
         
         if stack:
             return False
