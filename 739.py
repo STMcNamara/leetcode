@@ -10,22 +10,16 @@ class Solution:
 
         for day in range(num_days): # We can't check the last day
             print(day)
-            # If today is colder or equal to yesterday, today is the coldest day so far.
-            if not coldest_days or temperatures[day] <= temperatures[day - 1]:
-                coldest_days.append(day)
-            # Today is hotter than yesterday and can't be first day
-            else:
-                # Some number of preceding days were colder than this one.
-                while coldest_days and temperatures[coldest_days[-1]] < temperatures[day]:
-                    # Calculate the delta to day
-                    deltas[coldest_days[-1]] = day - coldest_days[-1]
+            while coldest_days and temperatures[coldest_days[-1]] < temperatures[day]:
+                # Calculate the delta to day
+                deltas[coldest_days[-1]] = day - coldest_days[-1]
 
-                    # Remove from stack
-                    coldest_days.pop()
+                # Remove from stack
+                coldest_days.pop()
 
 
-                # Today is now the last coldest day
-                coldest_days.append(day)
+            # Today is now the last coldest day
+            coldest_days.append(day)
 
         return deltas
                        
